@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - oracle_2@localhost" uuid="82f8bf39-351b-4d71-9e0f-2277515d0997">
+      <secret-storage>master_key</secret-storage>
+      <user-name>Sachin</user-name>
+      <schema-pattern>oracle_2.*</schema-pattern>
+      <default-schemas>oracle_2.*</default-schemas>
+    </data-source>
+  </component>
+</project>

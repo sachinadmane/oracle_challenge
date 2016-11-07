@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+
+      <table id="recipe-table" class="table">
+      <thead>
+    <tr>
+        <th>Recipe Posted by</th>
+
+        <th>Recipe Name</th>
+
+        <th> Description</th>
+
+        <th>Recipe Steps</th>
+
+
+    </tr>
+
+    </thead>
+
+      <tbody>
+
+    <tr>
+
+        <td>{{ recipe.owner }}</td>
+
+        <td>{{ recipe.name }}</td>
+
+        <td>    {{ recipe.description }}    </td>
+
+
+
+       <td>   {% for item in query %}
+
+
+        <input type="text" class="form-control" id="" value="{{ item.recipedescription }}">
+
+
+
+
+
+
+
+    {% endfor %}  </td>
+
+
+    </tr>
+
+      </tbody>
+</table>
+
+
+</div>
+</div>
+
+
+{% endblock %}

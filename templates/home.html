@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+      <table id="recipe-table" class="table">
+      <thead>
+    <tr>
+        <th>Username</th>
+
+        <th>Recipe Name</th>
+
+        <th> Description</th>
+
+        <th>  </th>
+
+
+    </tr>
+
+    </thead>
+
+      <tbody>
+    {% for item in query %}
+    <tr id="{{ item.id }}">
+
+        <td>{{ item.owner }}</td>
+
+        <td> <a href="/recipe/view?id={{ item.id }}">{{ item.name }}</a></td>
+
+        <td>    {{ item.description }}    </td>
+
+        {% if item.owner == request.user.username %}
+
+        <td>     <a href="/recipe/edit?id={{ item.id }}"  class="recipeEdit"><img src="{% static 'images/edit.png' %}" class="eimage"></a>
+                  <a href="javascript:;"  class="recipeDelete"><img src="{% static 'images/remove.png' %}" class="dimage"></a>
+
+        </td>
+
+      {% endif %}
+
+
+
+
+    </tr>
+    {% endfor %}
+      </tbody>
+</table>
+
+<input type="text" class="form-control" id="search" placeholder="search recipe">
+
+<br>
+
+<a href="/oracle/add.html">Click here to add a recipe</a>
+</div>
+</div>
+
+
+{% endblock %}
